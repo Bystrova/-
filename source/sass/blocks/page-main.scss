@@ -1,0 +1,31 @@
+.page-main {
+  background-color: $basic-dark;
+  height: 100vh;
+
+  @media (min-width: $tablet-width) {
+    background: url("../images/alpaca-tablet.jpg") 50% 0 no-repeat,
+      $basic-dark;
+    background-size: cover;
+
+    &--shadow {
+      background: linear-gradient(to right, $basic-opacity-grey, $basic-opacity-grey),
+        url("../images/alpaca-tablet.jpg") 50% 0 no-repeat,
+        $basic-dark;
+      background-size: cover;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    background: url("../images/alpaca-desktop.jpg") 50% 0 no-repeat,
+      $basic-dark;
+    background-size: cover;
+
+    &--shadow {
+      background: url("../images/alpaca-desktop.jpg") 50% 0 no-repeat,
+        $basic-dark;
+      background-size: cover;
+    }
+  }
+
+
+}

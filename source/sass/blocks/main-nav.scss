@@ -1,0 +1,310 @@
+.main-nav {
+  position: relative;
+}
+
+.main-nav__toggle {
+  width: 22px;
+  height: 2px;
+  background-color: $basic-orange;
+  border: none;
+  position: relative;
+  display: block;
+
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.main-nav__toggle::before,
+.main-nav__toggle::after {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background-color: $basic-orange;
+  position: absolute;
+}
+
+.main-nav__toggle::before {
+  top: -6px;
+  left: 0;
+}
+
+.main-nav__toggle::after {
+  top: 6px;
+  right: 0;
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+
+  position: absolute;
+  width: 375px;
+
+  background-color: $basic-dark;
+  top: 41px;
+  right: -20px;
+  height: 100vh;
+
+  &--active {
+    display: block;
+    animation-name: appearence;
+    animation-duration: 0.4s;
+  }
+
+  @media (min-width: $tablet-width) {
+    right: -22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    position: static;
+    width: auto;
+    height: auto;
+  }
+}
+
+.main-nav__inner-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+
+    position: absolute;
+    background-color: $basic-dark-grey;
+    width: 320px;
+    top: 52px;
+    left: -20px;
+    border-radius: 0 0 10px 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 14px;
+      top: -14px;
+      left: 45px;
+      background: url("../images/drop-arrow.svg");
+      z-index: 1;
+    }
+
+    &--right {
+      top: -41px;
+      left: 350px;
+      width: auto;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      display: none;
+    }
+
+    &--right::before {
+      display: none;
+    }
+
+    &--active {
+      display: none;
+    }
+  }
+}
+
+.main-nav__item {
+
+  @media (min-width: $desktop-width) {
+    margin-right: 76px;
+    position: relative;
+
+    &--arrow:hover {
+      position: relative;
+    }
+
+    &--arrow:hover::before {
+      position: absolute;
+      content: "";
+      width: 28px;
+      height: 14px;
+      background: url("../images/drop-arrow.svg");
+      top: 13px;
+      left: -20px;
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.main-nav__item--arrow:first-child .main-nav__link {
+  @media (min-width: $desktop-width) {
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.main-nav__item:last-child {
+  @media (min-width: $desktop-width) {
+    margin-right: 0;
+  }
+}
+
+.main-nav__list>.main-nav__item {
+  @media (min-width: $desktop-width) {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 50px;
+      top: 20px;
+      left: 0;
+      position: absolute;
+      cursor: pointer;
+    }
+  }
+}
+
+.main-nav__inner-list>.main-nav__item {
+  @media (min-width: $desktop-width) {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 40px;
+      top: 0;
+      left: 30px;
+      position: absolute;
+      cursor: pointer;
+      z-index: -1;
+    }
+  }
+}
+
+.main-nav__inner-list .main-nav__item {
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
+}
+
+.main-nav__link {
+  color: $basic-light;
+  font-family: $Roboto;
+  font-size: 18px;
+  line-height: 24px;
+
+  display: block;
+  padding: 20px;
+  background-color: $basic-dark-grey;
+  border-bottom: 1px solid $basic-dark;
+
+  &--active {
+    background-color: $basic-dark;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+}
+
+.main-nav__inner-list .main-nav__link {
+  font-size: 16px;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    padding: 8px 38px 8px 18px;
+    background-color: $basic-dark-grey;
+    border-bottom: 1px solid $basic-opacity-white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:hover {
+      color: inherit;
+      background-color: $basic-dark;
+    }
+
+    &--drop-right {
+      position: relative;
+    }
+
+    &--drop-right::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 6px;
+      top: 17px;
+      right: 20px;
+      background: url("../images/arrow.svg");
+      transform: rotate(90deg);
+    }
+
+    &--right {
+      padding: 8px 18px;
+    }
+
+  }
+}
+
+.main-nav__link:hover {
+  @media (min-width: $desktop-width) {
+    color: $basic-dark-orange;
+    position: relative;
+  }
+}
+
+.main-nav__item:last-child>.main-nav__link {
+  @media (min-width: $desktop-width) {
+    border-color: transparent;
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+.main-nav__list>.main-nav__item:hover>.main-nav__inner-list,
+.main-nav__inner-list>.main-nav__item:hover>.main-nav__inner-list {
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}
+
+.main-nav__list>.main-nav__item:hover>.main-nav__link {
+  @media (min-width: $desktop-width) {
+    color: $basic-dark-orange;
+  }
+}
+
+.main-nav__link span {
+  position: relative;
+}
+
+.main-nav__link span::after {
+  position: relative;
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 6px;
+  background: url("../images/arrow.svg") no-repeat;
+  top: 10px;
+  right: -20px;
+  transform: rotate(180deg);
+}
+
+.main-nav__link--active span::after {
+  transform: rotate(0deg);
+
+  @media (min-width: $desktop-width) {
+    transform: rotate(180deg);
+  }
+}
+
+.main-nav__item:hover span::after {
+  @media (min-width: $desktop-width) {
+    transform: rotate(0deg);
+  }
+}
