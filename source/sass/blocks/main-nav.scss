@@ -33,7 +33,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-
+  visibility: hidden;
   position: absolute;
   width: 375px;
 
@@ -42,9 +42,10 @@
   right: -400px;
   height: calc(100vh - 80px);
   overflow-y: auto;
-  transition: right 0.4s;
+  transition: right 0.4s, visibility 0.4s;
 
   &--active {
+    visibility: visible;
     right: -20px;
   }
 
