@@ -77,6 +77,19 @@ const watcher = () => {
 
 exports.watcher = watcher;
 
+//Build
+const build = gulp.series(
+  clean,
+  copyImages,
+  copyScripts,
+  gulp.parallel(
+    html,
+    styles,
+  ),
+);
+
+exports.build = build;
+
 //Start
 exports.default = gulp.series(
   clean,
