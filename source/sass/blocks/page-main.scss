@@ -1,18 +1,15 @@
 .page-main {
   background-color: $basic-dark;
-  height: 100vh;
+  height: calc(100vh - 80px);
+  background: url("../images/alpaca-tablet.jpg") 50% 0 no-repeat,
+    $basic-dark;
+  background-size: cover;
 
-  @media (min-width: $tablet-width) {
-    background: url("../images/alpaca-tablet.jpg") 50% 0 no-repeat,
+  &--shadow {
+    background: linear-gradient(to right, $basic-opacity-grey, $basic-opacity-grey),
+      url("../images/alpaca-tablet.jpg") 50% 0 no-repeat,
       $basic-dark;
     background-size: cover;
-
-    &--shadow {
-      background: linear-gradient(to right, $basic-opacity-grey, $basic-opacity-grey),
-        url("../images/alpaca-tablet.jpg") 50% 0 no-repeat,
-        $basic-dark;
-      background-size: cover;
-    }
   }
 
   @media (min-width: $desktop-width) {

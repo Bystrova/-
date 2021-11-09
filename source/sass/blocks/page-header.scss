@@ -13,7 +13,7 @@
 
 .page-header__wrap {
   display: grid;
-  grid-template-columns: min-content 63%;
+  grid-template-columns: min-content 60%;
   justify-content: space-between;
   align-items: center;
   padding: 17px 0;
@@ -26,6 +26,7 @@
 .page-header__container {
   display: flex;
   justify-self: end;
+  align-self: top;
 
   @media (min-width: $tablet-width) {
     justify-self: auto;
@@ -49,7 +50,7 @@
   width: 18px;
   height: 18px;
   background: url("../images/phone.svg") no-repeat;
-  top: -8px;
+  top: 3px;
   left: -50px;
 
   @media (min-width: $tablet-width) {

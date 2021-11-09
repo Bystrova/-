@@ -43,6 +43,13 @@ const copyImages = () => {
 
 exports.copyImages = copyImages;
 
+const copyScripts = () => {
+  return gulp.src("source/scripts/*.js")
+    .pipe(gulp.dest("build/scripts"))
+}
+
+exports.copyScripts = copyScripts
+
 //Server
 const server = (done) => {
   browserSync.init({
@@ -64,6 +71,7 @@ const reload = (done) => {
 //Watcher
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
+  gulp.watch("source/scripts/script.js", gulp.series(copyScripts, reload));
   gulp.watch("source/*.html", gulp.series(html, reload));
 }
 
@@ -73,6 +81,7 @@ exports.watcher = watcher;
 exports.default = gulp.series(
   clean,
   copyImages,
+  copyScripts,
   gulp.parallel(
     html,
     styles,
