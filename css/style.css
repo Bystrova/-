@@ -3,7 +3,6 @@
 }
 
 body {
-  max-width: 375px;
   padding: 0;
   margin: 0;
   font-family: "Roboto", "Arial", sans-serif;
@@ -180,6 +179,7 @@ a {
     width: auto;
     height: auto;
     overflow-y: visible;
+    visibility: visible;
   }
 }
 
